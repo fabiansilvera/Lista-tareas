@@ -20,9 +20,11 @@
                 </div>
             <div id="fechaTexto"></div>
         </div>
+        <!-- form que crea tareas -->
         <form onsubmit="addNewTask(event)" >
             <input type="text" name="taskText" autocomplete="off" placeholder="Nueva Tarea" class="bordeRedondeado">
             <button type="submit" class="addTaskButton">+</button>
+            <!-- agregar evento on click en ordenar -->
             <button type="button" class="orderButton bordeRedondeado" onclick="renderOrderTasks()">Ordenar</button>
         </form>
         <div id="contenedorTareas"></div>
