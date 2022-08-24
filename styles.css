@@ -5,7 +5,13 @@
     --negro: #000000;
     --gris: #e7e7e7;
 }
-
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+ }
+*, *:before, *:after {
+    box-sizing: inherit;
+ }
 body {
     font-family: 'Lato', sans-serif;
     margin: 0;
@@ -46,6 +52,7 @@ body {
 
 #fechaTexto {
     letter-spacing: 3px;
+    font-size: 15px;
 }
 
 #fechaNumero,
