@@ -3,7 +3,6 @@ const fechaTexto = document.querySelector('#fechaTexto');
 const fechaMes = document.querySelector('#fechaMes');
 const fechaAño = document.querySelector('#fechaAño');
 const contenedorTareas = document.querySelector('#contenedorTareas')
-// boton eliminar
 // agregar id
 let contadorID = 0;
 
@@ -29,6 +28,7 @@ const addNewTask = event => {
     task.setAttribute("id", contadorID);
     // Crear parrafo
     const texto = document.createElement('p')
+    texto.setAttribute("id", contadorID);
     texto.textContent = value;
     // Crear input para eliminar 
     const boton = document.createElement('input')
@@ -52,11 +52,12 @@ const addNewTask = event => {
     contenedorTareas.prepend(task);
     // vaciar text area
     event.target.reset();
+
     contadorID++;
 };
 // cambiar entre done y toDo
 const cambiarEstadoTarea = event => {
-    event.target.classList.toggle('done');
+    document.getElementById([event.target.id]).classList.toggle('done');
 };
 // Ordenar tareas 
 const order = () => {
@@ -70,7 +71,7 @@ const order = () => {
     // Retornar primero los toDo y luego los done
     return [...toDo, ...done];
 };
-// asociar evento de ordenar tareas cuando se crea otra para el boton ordenar
+// asociar evento de ordenar tareas con el boton
 const renderOrderTasks = () => {
     order().forEach(el => contenedorTareas.appendChild(el))
 }

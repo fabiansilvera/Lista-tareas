@@ -8,6 +8,7 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%; 
+    user-select:none;
  }
 *, *:before, *:after {
     box-sizing: inherit;
